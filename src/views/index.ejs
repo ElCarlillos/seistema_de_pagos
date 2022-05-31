@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago a proveedores</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <h1 class="text-center">Lista de proveedores</h1>
+    </div>
+
+    <form action="" style="margin:0 auto;width: 35%;padding:20px;border-radius:20px;">
+        <div class="form-group">
+            <input type="text" placeholder="Busca a tus proveedores..." style="box-shadow:3px 3px 4px gray;" class="form-control">
+        </div>
+    </form>
+
+    <div id="lista_proveedores">
+        <table class="table table-bordered" style="width: 77%;margin:0 auto;">
+            <thead>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Compañia/Firma</th>
+                <th>Pago $</th>
+                <th>Deuda $</th>
+            </thead>
+            <tbody>
+                <%  providers.forEach((prov) => { %>
+                    <tr>
+                        <td>
+                            <%= prov._id %>
+                        </td>
+                        <td>
+                            <%= prov.name %>
+                        </td>
+                        <td>
+                            <%= prov.email %>
+                        </td>
+                        <td>
+                            <%= prov.company_id %>
+                        </td>
+                        <td>
+                            <%= prov.payment %>
+                        </td>
+                        <td>
+                            <%= prov.debt %>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
